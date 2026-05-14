@@ -257,19 +257,19 @@ audio{width:100%;height:32px;border-radius:8px;}
       <div class="listening-cards">
         <div class="listening-card">
           <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/iksNeMcgEqqefGBy.jpg');"><div class="listening-card-num">1</div></div>
-          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 1</div><div class="audio-placeholder" id="audio-placeholder-1">&#127925; Audio pending</div></div>
+          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 1 &mdash; Siobhan &amp; Joaquin</div><audio controls src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/MfZuMgwKMMXSllWX.wav"></audio></div>
         </div>
         <div class="listening-card">
           <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/CCMjylTIZvfrLTWi.jpg');"><div class="listening-card-num">2</div></div>
-          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 2</div><div class="audio-placeholder" id="audio-placeholder-2">&#127925; Audio pending</div></div>
+          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 2 &mdash; Lisa &amp; Carlos</div><audio controls src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/SJRIMAQYTScfnmWb.wav"></audio></div>
         </div>
         <div class="listening-card">
           <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/YWAughRQYJpXutup.jpg');"><div class="listening-card-num">3</div></div>
-          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 3</div><div class="audio-placeholder" id="audio-placeholder-3">&#127925; Audio pending</div></div>
+          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 3 &mdash; Diana &amp; Mark</div><audio controls src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/gVjCPRfRMSjJEgQG.wav"></audio></div>
         </div>
         <div class="listening-card">
           <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/IRnuGaliZgBenOLM.jpg');"><div class="listening-card-num">4</div></div>
-          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 4</div><div class="audio-placeholder" id="audio-placeholder-4">&#127925; Audio pending</div></div>
+          <div class="listening-card-audio"><div class="listening-card-label">Dialogue 4 &mdash; Amy &amp; Tom</div><audio controls src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/hBvzVTQVXpUDNIVT.wav"></audio></div>
         </div>
       </div>
     </div>
@@ -444,10 +444,10 @@ function initReaction() {
 
 // ANSWER REVEAL
 const revealData = [
-  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/iksNeMcgEqqefGBy.jpg', name: 'Pending audio', age: '-', city: '-', occupation: '-', likes: '-', greeting: '-', farewell: '-', slangs: '-' },
-  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/CCMjylTIZvfrLTWi.jpg', name: 'Pending audio', age: '-', city: '-', occupation: '-', likes: '-', greeting: '-', farewell: '-', slangs: '-' },
-  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/YWAughRQYJpXutup.jpg', name: 'Pending audio', age: '-', city: '-', occupation: '-', likes: '-', greeting: '-', farewell: '-', slangs: '-' },
-  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/IRnuGaliZgBenOLM.jpg', name: 'Pending audio', age: '-', city: '-', occupation: '-', likes: '-', greeting: '-', farewell: '-', slangs: '-' }
+  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/iksNeMcgEqqefGBy.jpg', name: 'Siobhan & Joaquin', age: '41 / 38', city: 'Paris / New York', occupation: 'Architect / Photographer', likes: 'Books, coffee / Reading, not sports', greeting: 'Good morning!', farewell: 'Catch you later / Toodles', slangs: 'Really? / That\'s cool! / Awesome! / Me too!' },
+  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/CCMjylTIZvfrLTWi.jpg', name: 'Lisa & Carlos', age: '33 / 27', city: 'Tokyo / Mexico City', occupation: 'Singer / Engineer', likes: 'Singing, not dancing / Dancing, not singing', greeting: 'Hey there!', farewell: 'Catch you later / See you', slangs: 'That\'s cool! / No way!' },
+  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/YWAughRQYJpXutup.jpg', name: 'Diana & Mark', age: '52 / 45', city: 'Buenos Aires / London', occupation: 'Nurse / Pilot', likes: 'Art, photography / Traveling, not photos', greeting: 'Howdy!', farewell: 'Keep in touch / Bye for now', slangs: 'Awesome!' },
+  { photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/IRnuGaliZgBenOLM.jpg', name: 'Amy & Tom', age: '36 / 30', city: 'Mumbai / Sydney', occupation: 'Hairdresser / Mechanic', likes: 'Cars / Old trucks, not sports cars', greeting: 'Good day!', farewell: 'Catch you later / Take care', slangs: 'Really? / Me too! / That\'s cool!' }
 ];
 const revealFields = ['name','age','city','occupation','likes','greeting','farewell','slangs'];
 const revealLabels = ['Name','Age','City','Occupation','Likes / Dislikes','Greeting','Farewell','Slangs'];
