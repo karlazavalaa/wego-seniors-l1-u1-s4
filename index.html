@@ -470,8 +470,18 @@ function revealAll() {
   document.querySelectorAll('.reveal-field-value.hidden').forEach(el => { el.classList.remove('hidden'); el.textContent = el.dataset.value; });
 }
 
-// DICE
+// DICE — no-repeat shuffle
+let dicePool = [];
+let diceOrder = 1;
+function shufflePool() {
+  dicePool = Array.from({length:10},(_,i)=>i+1);
+  for(let i=dicePool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[dicePool[i],dicePool[j]]=[dicePool[j],dicePool[i]];}
+  diceOrder = 1;
+}
+shufflePool();
 function rollDice() {
+  if(dicePool.length===0) shufflePool();
+  const final = dicePool.pop();
   const dice = document.getElementById('dice');
   const result = document.getElementById('diceResult');
   dice.classList.remove('rolling');
@@ -483,9 +493,11 @@ function rollDice() {
     count++;
     if (count >= 14) {
       clearInterval(interval);
-      const final = Math.floor(Math.random() * 10) + 1;
       dice.textContent = final;
-      result.innerHTML = 'Student <span>#' + final + '</span> goes first!';
+      const remaining = dicePool.length;
+      result.innerHTML = 'Turn <span>#' + diceOrder + '</span> &rarr; Student <span>' + final + '</span>' + (remaining > 0 ? '<br><small style="color:rgba(255,255,255,0.4);font-size:12px;">' + remaining + ' student' + (remaining===1?'':'s') + ' remaining</small>' : '<br><small style="color:var(--yellow);font-size:12px;">All turns assigned! Rolling again...</small>');
+      diceOrder++;
+      if(dicePool.length===0) setTimeout(()=>shufflePool(),1500);
     }
   }, 70);
 }
