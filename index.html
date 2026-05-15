@@ -47,7 +47,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--navy);font-fam
 .bingo-right{flex:0.7;display:flex;flex-direction:column;gap:8px;min-height:0;}
 .bingo-section-title{font-size:14px;font-weight:900;color:var(--yellow);text-transform:uppercase;letter-spacing:1px;}
 .bingo-card{flex:1;display:grid;grid-template-columns:repeat(6,1fr);gap:5px;min-height:0;}
-.bingo-cell{background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:white;text-align:center;cursor:pointer;transition:all 0.2s;padding:6px;line-height:1.2;}
+.bingo-cell{background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.15);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:white;text-align:center;cursor:pointer;transition:all 0.2s;padding:4px;line-height:1.2;gap:4px;overflow:hidden;}
+.bingo-cell img{width:100%;flex:1;object-fit:cover;border-radius:6px;min-height:0;}
+.bingo-cell span{flex-shrink:0;}
 .bingo-cell:hover{background:rgba(241,196,5,0.2);border-color:var(--yellow);}
 .bingo-cell.marked{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
 .bingo-reset-btn{background:var(--orange);border:none;color:white;border-radius:10px;padding:10px 20px;font-size:15px;font-weight:900;cursor:pointer;font-family:'Barlow',sans-serif;align-self:flex-start;}
@@ -400,14 +402,39 @@ function goToSlide(n) {
 function changeSlide(dir) { goToSlide(currentSlide + dir); }
 
 // BINGO
-const bingoActivities = ['Cooking','Traveling','Sports','Music','Dancing','Reading','Yoga','Gardening','Painting','Swimming','Hiking','Movies','Photography','Gaming','Cycling','Singing','Crafts','Meditation'];
+const bingoActivities = [
+  {label:'Cooking', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/SpVlZhZBudqvFJyi.png'},
+  {label:'Traveling', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/KwsuSQWHEKqEqtZk.png'},
+  {label:'Sports', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/IHXytXUKECxcrAtO.png'},
+  {label:'Music', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/LFhSoQOuDhgOJUqF.png'},
+  {label:'Dancing', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/PNVzbCJYbVnkvbOk.png'},
+  {label:'Reading', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/DHpNLEZhYxyceeXz.png'},
+  {label:'Yoga', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/yzEeUpwdxIdlFHUV.png'},
+  {label:'Gardening', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/SOKYgEcviIjbZfug.png'},
+  {label:'Painting', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/SjkIhswDvkTNTdfJ.png'},
+  {label:'Swimming', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/rCzFKBlMJiwljpLG.png'},
+  {label:'Hiking', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/DGOsnGkxEOtAMCoY.png'},
+  {label:'Movies', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/jqAOEOWXlcyVQEnC.png'},
+  {label:'Photography', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/WLXmefPbNhkiAsSh.png'},
+  {label:'Gaming', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/NdvdLiadACkMDdGS.png'},
+  {label:'Cycling', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/YRXBQKkRfFfpXwvg.png'},
+  {label:'Singing', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/SCqTKjAxYFhrZcrY.png'},
+  {label:'Crafts', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/VWNARODGrkHaaUtY.png'},
+  {label:'Meditation', img:'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/AtpPisRGRfKaWiwo.png'}
+];
 function initBingo() {
   const card = document.getElementById('bingoCard');
   if (card.innerHTML !== '') return;
   bingoActivities.forEach(act => {
     const cell = document.createElement('div');
     cell.className = 'bingo-cell';
-    cell.textContent = act;
+    const img = document.createElement('img');
+    img.src = act.img;
+    img.alt = act.label;
+    const lbl = document.createElement('span');
+    lbl.textContent = act.label;
+    cell.appendChild(img);
+    cell.appendChild(lbl);
     cell.onclick = () => cell.classList.toggle('marked');
     card.appendChild(cell);
   });
