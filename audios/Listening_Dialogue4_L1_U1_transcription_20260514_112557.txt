@@ -1,0 +1,11 @@
+[00:00.0 - 00:01.7] Good day. You good?
+[00:01.7 - 00:03.7] I'm all right. What's good?
+[00:03.7 - 00:05.8] I'm Amy. I'm 36.
+[00:05.8 - 00:07.9] Hi Amy. Not bad.
+[00:07.9 - 00:11.4] I'm Tom. I'm 30 years old. From Sydney.
+[00:11.4 - 00:15.0] Sydney? I'm from Mumbai. I'm a hairdresser. What do you do?
+[00:15.0 - 00:18.3] I'm a mechanic. I work at the garage downtown.
+[00:18.3 - 00:22.4] Really? I'm crazy about cars. I'm a car lover.
+[00:22.4 - 00:27.4] Me too. But I don't like sports cars. I'm good at fixing old trucks.
+[00:27.4 - 00:29.8] That's cool. I have to go to the salon now.
+[00:29.8 - 00:32.8] Catch you later, Tom. Take care, Amy.

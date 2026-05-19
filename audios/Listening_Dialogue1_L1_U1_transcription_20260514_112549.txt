@@ -1,0 +1,10 @@
+[00:00.0 - 00:02.0] Good morning. How are you doing?
+[00:02.2 - 00:12.0] Doing well. I'm Siobhan, S-I-O-B-H-I, on, Siobhan.
+[00:12.2 - 00:16.1] Nice to meet you, Siobhan. I'm Joaquin. I live in New York.
+[00:16.4 - 00:18.8] Oh, really? I live in Paris. I'm an architect.
+[00:18.9 - 00:23.0] That's cool. I'm 38 years old and I work as a photographer.
+[00:23.3 - 00:25.8] Awesome. I'm 41. What do you do in your free time?
+[00:26.0 - 00:31.2] I'm a coffee lover. I enjoy reading books at cafes. I'm not into sports.
+[00:31.4 - 00:34.6] Me too. I'm crazy about books, but I hate running.
+[00:34.7 - 00:35.9] Well, catch you later.
+[00:36.1 - 00:36.8] Toodles.

@@ -1,0 +1,122 @@
+{
+  "duration": 35.16999816894531,
+  "language": "english",
+  "segments": [
+    {
+      "start": 0,
+      "end": 1.8799999952316284,
+      "text": " Hey there, how's it going?"
+    },
+    {
+      "start": 1.8799999952316284,
+      "end": 2.7200000286102295,
+      "text": " I'm Lisa."
+    },
+    {
+      "start": 2.7200000286102295,
+      "end": 4.400000095367432,
+      "text": " Same old, same old."
+    },
+    {
+      "start": 4.400000095367432,
+      "end": 5.519999980926514,
+      "text": " I'm Carlos."
+    },
+    {
+      "start": 5.519999980926514,
+      "end": 7.199999809265137,
+      "text": " Are you the new engineer?"
+    },
+    {
+      "start": 7.199999809265137,
+      "end": 8.399999618530273,
+      "text": " Yes, I am."
+    },
+    {
+      "start": 8.399999618530273,
+      "end": 10.760000228881836,
+      "text": " I work at the technology company next door."
+    },
+    {
+      "start": 10.760000228881836,
+      "end": 12.119999885559082,
+      "text": " I'm 27 years old."
+    },
+    {
+      "start": 12.119999885559082,
+      "end": 13.239999771118164,
+      "text": " That's cool."
+    },
+    {
+      "start": 13.239999771118164,
+      "end": 14.640000343322754,
+      "text": " I'm 33."
+    },
+    {
+      "start": 14.640000343322754,
+      "end": 16.799999237060547,
+      "text": " I work at the music studio."
+    },
+    {
+      "start": 16.799999237060547,
+      "end": 17.760000228881836,
+      "text": " I'm a singer."
+    },
+    {
+      "start": 17.760000228881836,
+      "end": 19.639999389648438,
+      "text": " No way."
+    },
+    {
+      "start": 19.639999389648438,
+      "end": 20.920000076293945,
+      "text": " Are you good at singing?"
+    },
+    {
+      "start": 20.920000076293945,
+      "end": 22.959999084472656,
+      "text": " Yes, but I don't like dancing."
+    },
+    {
+      "start": 22.959999084472656,
+      "end": 24.079999923706055,
+      "text": " What about you?"
+    },
+    {
+      "start": 24.079999923706055,
+      "end": 26.959999084472656,
+      "text": " I love to dance, but I'm not into singing."
+    },
+    {
+      "start": 26.959999084472656,
+      "end": 28.15999984741211,
+      "text": " By the way, where do you live?"
+    },
+    {
+      "start": 28.15999984741211,
+      "end": 30.079999923706055,
+      "text": " I live in Mexico City."
+    },
+    {
+      "start": 30.079999923706055,
+      "end": 30.799999237060547,
+      "text": " And you?"
+    },
+    {
+      "start": 30.799999237060547,
+      "end": 32.31999969482422,
+      "text": " I live in Tokyo."
+    },
+    {
+      "start": 32.31999969482422,
+      "end": 33.7599983215332,
+      "text": " We'll catch you later, Carlos."
+    },
+    {
+      "start": 33.7599983215332,
+      "end": 35.959999084472656,
+      "text": " See you, Lisa."
+    }
+  ],
+  "full_text": "Hey there, how's it going? I'm Lisa. Same old, same old. I'm Carlos. Are you the new engineer? Yes, I am. I work at the technology company next door. I'm 27 years old. That's cool. I'm 33. I work at the music studio. I'm a singer. No way. Are you good at singing? Yes, but I don't like dancing. What about you? I love to dance, but I'm not into singing. By the way, where do you live? I live in Mexico City. And you? I live in Tokyo. We'll catch you later, Carlos. See you, Lisa."
+}

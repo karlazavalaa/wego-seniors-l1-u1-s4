@@ -1,0 +1,23 @@
+[00:00.0 - 00:01.9] Hey there, how's it going?
+[00:01.9 - 00:02.7] I'm Lisa.
+[00:02.7 - 00:04.4] Same old, same old.
+[00:04.4 - 00:05.5] I'm Carlos.
+[00:05.5 - 00:07.2] Are you the new engineer?
+[00:07.2 - 00:08.4] Yes, I am.
+[00:08.4 - 00:10.8] I work at the technology company next door.
+[00:10.8 - 00:12.1] I'm 27 years old.
+[00:12.1 - 00:13.2] That's cool.
+[00:13.2 - 00:14.6] I'm 33.
+[00:14.6 - 00:16.8] I work at the music studio.
+[00:16.8 - 00:17.8] I'm a singer.
+[00:17.8 - 00:19.6] No way.
+[00:19.6 - 00:20.9] Are you good at singing?
+[00:20.9 - 00:23.0] Yes, but I don't like dancing.
+[00:23.0 - 00:24.1] What about you?
+[00:24.1 - 00:27.0] I love to dance, but I'm not into singing.
+[00:27.0 - 00:28.2] By the way, where do you live?
+[00:28.2 - 00:30.1] I live in Mexico City.
+[00:30.1 - 00:30.8] And you?
+[00:30.8 - 00:32.3] I live in Tokyo.
+[00:32.3 - 00:33.8] We'll catch you later, Carlos.
+[00:33.8 - 00:36.0] See you, Lisa.

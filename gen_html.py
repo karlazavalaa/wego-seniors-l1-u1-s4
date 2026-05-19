@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -6,10 +6,10 @@
 <title>WE GO &middot; Seniors &middot; L1 U1 &middot; Session 4</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#2D0A6B;--yellow:#F1C405;--blue:#7919EF;--purple:#9B59B6;--green:#00C853;--orange:#FF6B35;--teal:#C980DB;--pink:#E91E8C;}
+:root{--navy:#05046A;--yellow:#F1C405;--blue:#0057FF;--purple:#7B2FBE;--green:#00C853;--orange:#FF6B35;--teal:#00BCD4;--pink:#E91E8C;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--navy);font-family:'Barlow',sans-serif;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(45,10,107,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:2px solid rgba(241,196,5,0.3);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,4,106,0.97);backdrop-filter:blur(8px);display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:2px solid rgba(241,196,5,0.3);}
 .nav-arrow{background:rgba(255,255,255,0.1);border:none;color:white;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.2s;}
 .nav-arrow:hover{background:rgba(255,255,255,0.25);}
 .nav-pills{display:flex;gap:5px;flex-wrap:nowrap;overflow-x:auto;flex:1;}
@@ -22,13 +22,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--navy);font-fam
 .slide.active{display:flex;}
 #slide-0{padding:0;}
 .cover-hero{flex:1;min-height:0;background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/gcqawLIaQooGiVOf.jpg');background-size:cover;background-position:center top;position:relative;}
-.cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(45,10,107,0.55) 0%,rgba(45,10,107,0.1) 40%,rgba(45,10,107,0.7) 100%);}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,4,106,0.55) 0%,rgba(5,4,106,0.1) 40%,rgba(5,4,106,0.7) 100%);}
 .cover-meta{position:absolute;top:18px;left:20px;display:flex;flex-direction:column;gap:4px;}
 .cover-tag{font-family:'Space Mono',monospace;font-size:11px;color:rgba(255,255,255,0.85);letter-spacing:1px;}
 .cover-title{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:white;line-height:1.05;text-shadow:0 2px 12px rgba(0,0,0,0.4);}
 .cover-title span{color:var(--yellow);}
 .cover-subtitle{font-size:15px;font-weight:600;color:rgba(255,255,255,0.9);margin-top:4px;}
-.cover-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px;background:rgba(45,10,107,0.9);}
+.cover-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px;background:rgba(5,4,106,0.9);}
 .cover-btn{border:none;border-radius:14px;padding:14px 8px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:transform 0.15s,opacity 0.15s;}
 .cover-btn:hover{transform:scale(1.04);opacity:0.9;}
 .cover-btn-name{font-size:13px;font-weight:900;color:white;text-align:center;line-height:1.2;}
@@ -90,7 +90,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--navy);font-fam
 .listening-card{border-radius:14px;overflow:hidden;display:flex;flex-direction:column;border:2px solid rgba(255,255,255,0.1);}
 .listening-card-photo{height:120px;background-size:cover;background-position:center top;flex-shrink:0;position:relative;}
 .listening-card-num{position:absolute;top:8px;left:8px;background:var(--yellow);color:var(--navy);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;}
-.listening-card-audio{background:rgba(45,10,107,0.95);padding:10px;display:flex;flex-direction:column;gap:6px;}
+.listening-card-audio{background:rgba(5,4,106,0.95);padding:10px;display:flex;flex-direction:column;gap:6px;}
 .listening-card-label{font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;}
 .audio-placeholder{background:rgba(255,255,255,0.07);border:1.5px dashed rgba(255,255,255,0.2);border-radius:8px;padding:10px;text-align:center;font-size:12px;color:rgba(255,255,255,0.4);font-weight:600;}
 audio{width:100%;height:32px;border-radius:8px;}
@@ -163,11 +163,11 @@ audio{width:100%;height:32px;border-radius:8px;}
     </div>
   </div>
   <div class="cover-buttons">
-    <button class="cover-btn" style="background:#9B59B6;" onclick="goToSlide(1)"><span class="cover-btn-name">Warm-up</span><span class="cover-btn-sub">Passion Bingo</span></button>
-    <button class="cover-btn" style="background:#7919EF;" onclick="goToSlide(2)"><span class="cover-btn-name">Slangs</span><span class="cover-btn-sub">Presentation</span></button>
-    <button class="cover-btn" style="background:#F1C405;" onclick="goToSlide(3)"><span class="cover-btn-name" style="color:#2D0A6B;">Slang Practice</span><span class="cover-btn-sub" style="color:rgba(45,10,107,0.7);">Reaction Game</span></button>
+    <button class="cover-btn" style="background:#7B2FBE;" onclick="goToSlide(1)"><span class="cover-btn-name">Warm-up</span><span class="cover-btn-sub">Passion Bingo</span></button>
+    <button class="cover-btn" style="background:#0057FF;" onclick="goToSlide(2)"><span class="cover-btn-name">Slangs</span><span class="cover-btn-sub">Presentation</span></button>
+    <button class="cover-btn" style="background:#F1C405;" onclick="goToSlide(3)"><span class="cover-btn-name" style="color:#05046A;">Slang Practice</span><span class="cover-btn-sub" style="color:rgba(5,4,106,0.7);">Reaction Game</span></button>
     <button class="cover-btn" style="background:#FF6B35;" onclick="goToSlide(4)"><span class="cover-btn-name">Listening</span><span class="cover-btn-sub">Secret ID Cards</span></button>
-    <button class="cover-btn" style="background:#C980DB;" onclick="goToSlide(5)"><span class="cover-btn-name">Answer Reveal</span><span class="cover-btn-sub">Check Answers</span></button>
+    <button class="cover-btn" style="background:#00BCD4;" onclick="goToSlide(5)"><span class="cover-btn-name">Answer Reveal</span><span class="cover-btn-sub">Check Answers</span></button>
     <button class="cover-btn" style="background:#E91E8C;" onclick="goToSlide(6)"><span class="cover-btn-name">Exit Ticket</span><span class="cover-btn-sub">Chain Game</span></button>
 
   </div>
@@ -176,7 +176,7 @@ audio{width:100%;height:32px;border-radius:8px;}
 <!-- SLIDE 1: BINGO -->
 <div class="slide" id="slide-1">
   <div class="section-header">
-    <span class="sh-badge" style="background:#9B59B6;color:white;">WARM-UP</span>
+    <span class="sh-badge" style="background:#7B2FBE;color:white;">WARM-UP</span>
     <span class="sh-title">The Passion Bingo</span>
     <div class="sh-right"><span class="sh-book">Book Page &mdash;</span><span class="sh-counter" id="counter-1"></span></div>
   </div>
@@ -209,7 +209,7 @@ audio{width:100%;height:32px;border-radius:8px;}
 <!-- SLIDE 2: SLANGS -->
 <div class="slide" id="slide-2">
   <div class="section-header">
-    <span class="sh-badge" style="background:#7919EF;color:white;">SLANGS</span>
+    <span class="sh-badge" style="background:#0057FF;color:white;">SLANGS</span>
     <span class="sh-title">Reaction Slangs &mdash; Presentation</span>
     <div class="sh-right"><span class="sh-book">Book Page &mdash;</span><span class="sh-counter" id="counter-2"></span></div>
   </div>
@@ -227,7 +227,7 @@ audio{width:100%;height:32px;border-radius:8px;}
 <!-- SLIDE 3: REACTION GAME -->
 <div class="slide" id="slide-3">
   <div class="section-header">
-    <span class="sh-badge" style="background:#F1C405;color:#2D0A6B;">SLANG PRACTICE</span>
+    <span class="sh-badge" style="background:#F1C405;color:#05046A;">SLANG PRACTICE</span>
     <span class="sh-title">The Reaction Game</span>
     <div class="sh-right"><span class="sh-book">Book Page &mdash;</span><span class="sh-counter" id="counter-3"></span></div>
   </div>
@@ -281,7 +281,7 @@ audio{width:100%;height:32px;border-radius:8px;}
 <!-- SLIDE 5: ANSWER REVEAL -->
 <div class="slide" id="slide-5">
   <div class="section-header">
-    <span class="sh-badge" style="background:#C980DB;color:white;">ANSWER REVEAL</span>
+    <span class="sh-badge" style="background:#00BCD4;color:white;">ANSWER REVEAL</span>
     <span class="sh-title">Check Your ID Cards</span>
     <div class="sh-right"><span class="sh-book">Book Page &mdash;</span><span class="sh-counter" id="counter-5"></span></div>
   </div>
@@ -316,8 +316,8 @@ audio{width:100%;height:32px;border-radius:8px;}
           <div class="chain-step-label" style="color:#F1C405;">Student 1 &mdash; Says only their own info</div>
           <div class="chain-step-text">"My name is <em>Ana</em>. I am <em>52</em> years old. I live in <em>Guadalajara</em>. I am a <em>teacher</em>."</div>
         </div>
-        <div class="chain-step" style="border-left-color:#C980DB;">
-          <div class="chain-step-label" style="color:#C980DB;">Student 2 &mdash; Repeats Student 1 + adds their own</div>
+        <div class="chain-step" style="border-left-color:#00BCD4;">
+          <div class="chain-step-label" style="color:#00BCD4;">Student 2 &mdash; Repeats Student 1 + adds their own</div>
           <div class="chain-step-text">"She is <em>Ana</em>. She is <em>52</em>. She is from <em>Guadalajara</em>. She is a <em>teacher</em>."<br>"My name is <em>Carlos</em>. I am <em>60</em>. I am from <em>Monterrey</em>. I am a <em>doctor</em>."</div>
         </div>
         <div class="chain-step" style="border-left-color:#00C853;">
@@ -533,4 +533,9 @@ buildNav();
 updateNav();
 </script>
 </body>
-</html>
+</html>"""
+
+with open('/home/ubuntu/wego-l1-s4/index.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print("Written:", len(html), "chars")

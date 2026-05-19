@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WE GO · Seniors · L1 U1 · Session 4</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #05046A;
+    --yellow: #F1C405;
+    --blue: #0057FF;
+    --purple: #7B2FBE;
+    --green: #00C853;
+    --orange: #FF6B35;
+    --teal: #00BCD4;
+    --pink: #E91E8C;
+    --red: #FF3B30;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: var(--navy); font-family: 'Barlow', sans-serif; }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(5,4,106,0.97); backdrop-filter: blur(8px);
+    display: flex; align-items: center; gap: 6px; padding: 8px 12px;
+    border-bottom: 2px solid rgba(241,196,5,0.3);
+  }
+  .nav-arrow {
+    background: rgba(255,255,255,0.1); border: none; color: white;
+    width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s;
+  }
+  .nav-arrow:hover { background: rgba(255,255,255,0.25); }
+  .nav-pills { display: flex; gap: 5px; flex-wrap: nowrap; overflow-x: auto; flex: 1; }
+  .nav-pill {
+    background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.7); padding: 5px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap;
+    transition: all 0.2s; font-family: 'Barlow', sans-serif;
+  }
+  .nav-pill:hover { background: rgba(255,255,255,0.18); color: white; }
+  .nav-pill.active { background: var(--yellow); color: var(--navy); border-color: var(--yellow); }
+  .nav-counter {
+    font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5);
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* ===== SLIDES ===== */
+  .slides-wrap { width: 100%; height: 100%; }
+  .slide {
+    display: none; width: 100%; height: 100%;
+    flex-direction: column; overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ===== COVER ===== */
+  #slide-0 { padding: 0; }
+  .cover-hero {
+    flex: 1; min-height: 0;
+    background-image: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/gcqawLIaQooGiVOf.jpg');
+    background-size: cover; background-position: center top;
+    position: relative;
+  }
+  .cover-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(5,4,106,0.55) 0%, rgba(5,4,106,0.1) 40%, rgba(5,4,106,0.7) 100%);
+  }
+  .cover-meta {
+    position: absolute; top: 18px; left: 20px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .cover-tag {
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    color: rgba(255,255,255,0.85); letter-spacing: 1px;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900;
+    color: white; line-height: 1.05; text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .cover-title span { color: var(--yellow); }
+  .cover-subtitle {
+    font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9);
+    margin-top: 4px;
+  }
+  .cover-buttons {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 6px; padding: 8px;
+    background: rgba(5,4,106,0.9);
+  }
+  .cover-btn {
+    border: none; border-radius: 14px; padding: 14px 8px;
+    cursor: pointer; display: flex; flex-direction: column;
+    align-items: center; gap: 4px; transition: transform 0.15s, opacity 0.15s;
+    text-decoration: none;
+  }
+  .cover-btn:hover { transform: scale(1.04); opacity: 0.9; }
+  .cover-btn-name {
+    font-size: 13px; font-weight: 900; color: white;
+    text-align: center; line-height: 1.2;
+  }
+  .cover-btn-sub {
+    font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.8);
+    text-align: center; line-height: 1.2;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px; flex-shrink: 0;
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+  }
+  .sh-badge {
+    font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+    padding: 4px 10px; border-radius: 20px; text-transform: uppercase;
+    letter-spacing: 1px; white-space: nowrap;
+  }
+  .sh-title {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+    color: white; flex: 1;
+  }
+  .sh-right {
+    display: flex; align-items: center; gap: 10px; margin-left: auto;
+  }
+  .sh-book {
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    color: rgba(255,255,255,0.5); white-space: nowrap; text-align: right;
+  }
+  .sh-counter {
+    font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+  }
+
+  /* ===== SLIDE CONTENT ===== */
+  .slide-content {
+    flex: 1; min-height: 0; display: flex; flex-direction: column;
+    padding: 14px 16px; gap: 12px; overflow: hidden;
+  }
+
+  /* ===== BINGO ===== */
+  .bingo-layout { flex: 1; display: flex; gap: 14px; min-height: 0; }
+  .bingo-left { flex: 1.2; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .bingo-right { flex: 0.8; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .bingo-section-title {
+    font-size: 13px; font-weight: 900; color: var(--yellow);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .bingo-card {
+    flex: 1; display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 4px; min-height: 0;
+  }
+  .bingo-cell {
+    background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: white; text-align: center;
+    cursor: pointer; transition: all 0.2s; padding: 4px; line-height: 1.2;
+  }
+  .bingo-cell:hover { background: rgba(241,196,5,0.15); }
+  .bingo-cell.marked {
+    background: var(--yellow); color: var(--navy); border-color: var(--yellow);
+  }
+  .bingo-cell.bingo-free {
+    background: var(--orange); color: white; border-color: var(--orange);
+    font-size: 10px;
+  }
+  .bingo-expressions {
+    flex: 1; display: flex; flex-direction: column; gap: 5px; overflow-y: auto;
+  }
+  .bingo-expr {
+    background: rgba(255,255,255,0.07); border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0; padding: 8px 12px;
+    font-size: 14px; font-weight: 600; color: white;
+  }
+  .bingo-expr span { color: var(--teal); }
+  .bingo-reset-btn {
+    background: var(--orange); border: none; color: white; border-radius: 10px;
+    padding: 8px 16px; font-size: 13px; font-weight: 900; cursor: pointer;
+    font-family: 'Barlow', sans-serif; align-self: flex-start;
+  }
+
+  /* ===== SLANGS ===== */
+  .slangs-grid {
+    flex: 1; display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 12px; min-height: 0;
+  }
+  .slang-card {
+    border-radius: 16px; padding: 20px 14px;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 10px; cursor: pointer;
+    transition: transform 0.2s; text-align: center;
+  }
+  .slang-card:hover { transform: scale(1.03); }
+  .slang-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.25); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900;
+  }
+  .slang-phrase {
+    font-size: 26px; font-weight: 900; color: white; line-height: 1.1;
+  }
+  .slang-use {
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85);
+    line-height: 1.3;
+  }
+
+  /* ===== REACTION GAME ===== */
+  .reaction-layout { flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .reaction-instruction {
+    background: rgba(255,255,255,0.07); border-radius: 12px;
+    padding: 12px 16px; font-size: 15px; font-weight: 600; color: white;
+    line-height: 1.4;
+  }
+  .reaction-instruction strong { color: var(--yellow); }
+  .reaction-slangs-bar {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .reaction-slang-chip {
+    background: var(--yellow); color: var(--navy);
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 14px; font-weight: 900;
+  }
+  .reaction-sentences {
+    flex: 1; display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 8px; min-height: 0;
+  }
+  .reaction-sentence {
+    background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .reaction-sentence:hover { background: rgba(255,255,255,0.12); }
+  .reaction-sentence.revealed { border-color: var(--green); background: rgba(0,200,83,0.1); }
+  .reaction-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--blue); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900; flex-shrink: 0;
+  }
+  .reaction-text { font-size: 15px; font-weight: 700; color: white; flex: 1; }
+  .reaction-answer {
+    font-size: 13px; font-weight: 700; color: var(--green);
+    display: none;
+  }
+  .reaction-sentence.revealed .reaction-answer { display: block; }
+
+  /* ===== PRE-LISTENING ===== */
+  .prelistening-layout { flex: 1; display: flex; gap: 16px; min-height: 0; }
+  .prelistening-left { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .prelistening-right { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .prelistening-instruction {
+    background: rgba(255,255,255,0.07); border-radius: 14px;
+    padding: 16px 20px; font-size: 16px; font-weight: 600; color: white;
+    line-height: 1.5;
+  }
+  .prelistening-instruction strong { color: var(--yellow); }
+  .idcard-blank {
+    flex: 1; background: rgba(255,255,255,0.05);
+    border: 2px dashed rgba(255,255,255,0.2); border-radius: 14px;
+    padding: 16px 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .idcard-blank-title {
+    font-size: 14px; font-weight: 900; color: var(--yellow);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .idcard-field {
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1.5px solid rgba(255,255,255,0.1); padding-bottom: 8px;
+  }
+  .idcard-field-label {
+    font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5);
+    min-width: 100px;
+  }
+  .idcard-field-line {
+    flex: 1; height: 2px; background: rgba(255,255,255,0.15); border-radius: 2px;
+  }
+  .listen-tip {
+    background: rgba(0,188,212,0.1); border: 1.5px solid rgba(0,188,212,0.3);
+    border-radius: 12px; padding: 12px 16px;
+    font-size: 14px; font-weight: 600; color: #7FDBFF; line-height: 1.4;
+  }
+
+  /* ===== LISTENING ===== */
+  .listening-layout { flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .listening-instruction {
+    background: rgba(255,255,255,0.07); border-radius: 12px;
+    padding: 12px 16px; font-size: 15px; font-weight: 600; color: white;
+  }
+  .listening-instruction strong { color: var(--yellow); }
+  .listening-cards {
+    flex: 1; display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; min-height: 0;
+  }
+  .listening-card {
+    border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column;
+    border: 2px solid rgba(255,255,255,0.1);
+  }
+  .listening-card-photo {
+    flex: 1; background-size: cover; background-position: center top;
+    min-height: 0; position: relative;
+  }
+  .listening-card-num {
+    position: absolute; top: 8px; left: 8px;
+    background: var(--yellow); color: var(--navy);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+  }
+  .listening-card-audio {
+    background: rgba(5,4,106,0.95); padding: 10px;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .listening-card-label {
+    font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .audio-placeholder {
+    background: rgba(255,255,255,0.07); border: 1.5px dashed rgba(255,255,255,0.2);
+    border-radius: 8px; padding: 10px; text-align: center;
+    font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600;
+  }
+  audio {
+    width: 100%; height: 32px; border-radius: 8px;
+  }
+
+  /* ===== ANSWER REVEAL ===== */
+  .reveal-layout { flex: 1; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+  .reveal-cards {
+    flex: 1; display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; min-height: 0;
+  }
+  .reveal-card {
+    border-radius: 14px; overflow: hidden;
+    display: flex; flex-direction: column;
+    border: 2px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+  }
+  .reveal-card-photo {
+    height: 120px; background-size: cover; background-position: center top;
+    position: relative; flex-shrink: 0;
+  }
+  .reveal-card-num {
+    position: absolute; top: 8px; left: 8px;
+    background: var(--yellow); color: var(--navy);
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 900;
+  }
+  .reveal-card-body {
+    flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 5px;
+    overflow-y: auto;
+  }
+  .reveal-field {
+    display: flex; flex-direction: column; gap: 2px;
+    border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 5px;
+  }
+  .reveal-field:last-child { border-bottom: none; }
+  .reveal-field-label {
+    font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.4);
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .reveal-field-value {
+    font-size: 13px; font-weight: 700; color: white;
+    cursor: pointer; min-height: 18px;
+    transition: all 0.2s;
+  }
+  .reveal-field-value.hidden {
+    background: rgba(255,255,255,0.1); border-radius: 4px;
+    color: transparent; user-select: none;
+  }
+  .reveal-field-value.hidden:hover { background: rgba(255,255,255,0.15); }
+  .reveal-all-btn {
+    background: var(--green); border: none; color: white; border-radius: 10px;
+    padding: 10px 20px; font-size: 14px; font-weight: 900; cursor: pointer;
+    font-family: 'Barlow', sans-serif; align-self: center;
+  }
+
+  /* ===== EXIT TICKET ===== */
+  .exit-layout { flex: 1; display: flex; gap: 16px; min-height: 0; }
+  .exit-left { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .exit-right { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .exit-step-box {
+    background: rgba(255,255,255,0.07); border-radius: 14px;
+    padding: 16px 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .exit-step-title {
+    font-size: 14px; font-weight: 900; color: var(--yellow);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .exit-step {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 17px; font-weight: 700; color: white; line-height: 1.4;
+  }
+  .exit-step-num {
+    background: var(--yellow); color: var(--navy);
+    border-radius: 50%; width: 28px; height: 28px; min-width: 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900; flex-shrink: 0;
+  }
+  .exit-example-box {
+    background: rgba(0,87,255,0.1); border: 1.5px solid rgba(0,87,255,0.3);
+    border-radius: 14px; padding: 16px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .exit-example-title {
+    font-size: 13px; font-weight: 900; color: #7FDBFF;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .exit-example-line {
+    font-size: 18px; font-weight: 700; color: white; line-height: 1.5;
+  }
+  .exit-example-line span { color: var(--yellow); }
+  .exit-slangs-box {
+    background: rgba(241,196,5,0.08); border: 1.5px solid rgba(241,196,5,0.25);
+    border-radius: 14px; padding: 14px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .exit-slangs-title {
+    font-size: 13px; font-weight: 900; color: var(--yellow);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .exit-slangs-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .exit-slang-chip {
+    background: var(--yellow); color: var(--navy);
+    padding: 7px 16px; border-radius: 20px;
+    font-size: 15px; font-weight: 900;
+  }
+
+  /* ===== HOMEWORK ===== */
+  .hw-layout { flex: 1; display: flex; flex-direction: column; gap: 16px; min-height: 0; justify-content: center; }
+  .hw-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .hw-card {
+    border-radius: 16px; padding: 22px 24px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .hw-card-label {
+    font-size: 12px; font-weight: 900; color: rgba(255,255,255,0.7);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .hw-card-pages {
+    font-size: 32px; font-weight: 900; color: white;
+  }
+  .hw-card-desc {
+    font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.85);
+    line-height: 1.4;
+  }
+  .hw-reminder {
+    background: rgba(255,255,255,0.07); border-radius: 14px;
+    padding: 16px 20px; font-size: 16px; font-weight: 600; color: white;
+    text-align: center; line-height: 1.5;
+  }
+  .hw-reminder strong { color: var(--yellow); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav" style="display:none;">
+  <button class="nav-arrow" onclick="changeSlide(-1)">◀</button>
+  <div class="nav-pills" id="navPills"></div>
+  <button class="nav-arrow" onclick="changeSlide(1)">▶</button>
+  <span class="nav-counter" id="navCounter"></span>
+</nav>
+
+<div class="slides-wrap" id="slidesWrap">
+
+<!-- SLIDE 0: COVER -->
+<div class="slide active" id="slide-0">
+  <div class="cover-hero">
+    <div class="cover-overlay"></div>
+    <div class="cover-meta">
+      <span class="cover-tag">WE GO · Seniors · Level 1 · Unit 1 · 60 min</span>
+      <div class="cover-title">Session <span>4</span></div>
+      <div class="cover-subtitle">Speaking & Listening · Consolidation</div>
+    </div>
+  </div>
+  <div class="cover-buttons">
+    <button class="cover-btn" style="background:#7B2FBE;" onclick="goToSlide(1)">
+      <span class="cover-btn-name">Warm-up</span>
+      <span class="cover-btn-sub">Passion Bingo</span>
+    </button>
+    <button class="cover-btn" style="background:#0057FF;" onclick="goToSlide(2)">
+      <span class="cover-btn-name">Slangs</span>
+      <span class="cover-btn-sub">Presentation</span>
+    </button>
+    <button class="cover-btn" style="background:#F1C405; color:#05046A;" onclick="goToSlide(3)">
+      <span class="cover-btn-name" style="color:#05046A;">Slang Practice</span>
+      <span class="cover-btn-sub" style="color:rgba(5,4,106,0.7);">Reaction Game</span>
+    </button>
+    <button class="cover-btn" style="background:#00C853;" onclick="goToSlide(4)">
+      <span class="cover-btn-name">Pre-Listening</span>
+      <span class="cover-btn-sub">ID Cards Setup</span>
+    </button>
+    <button class="cover-btn" style="background:#FF6B35;" onclick="goToSlide(5)">
+      <span class="cover-btn-name">Listening</span>
+      <span class="cover-btn-sub">Secret ID Cards</span>
+    </button>
+    <button class="cover-btn" style="background:#00BCD4;" onclick="goToSlide(6)">
+      <span class="cover-btn-name">Answer Reveal</span>
+      <span class="cover-btn-sub">Check Answers</span>
+    </button>
+    <button class="cover-btn" style="background:#E91E8C;" onclick="goToSlide(7)">
+      <span class="cover-btn-name">Exit Ticket</span>
+      <span class="cover-btn-sub">Final Spell</span>
+    </button>
+    <button class="cover-btn" style="background:#4A148C;" onclick="goToSlide(8)">
+      <span class="cover-btn-name">Homework</span>
+      <span class="cover-btn-sub">pp. 11–14</span>
+    </button>
+  </div>
+</div>
+
+<!-- SLIDE 1: WARM-UP — PASSION BINGO -->
+<div class="slide" id="slide-1">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#7B2FBE; color:white;">WARM-UP</span>
+    <span class="sh-title">The Passion Bingo</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-1"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="bingo-layout">
+      <div class="bingo-left">
+        <div class="bingo-section-title">🎯 Bingo Card — Mark each square as students respond!</div>
+        <div class="bingo-card" id="bingoCard"></div>
+        <button class="bingo-reset-btn" onclick="resetBingo()">🔄 Reset Board</button>
+      </div>
+      <div class="bingo-right">
+        <div class="bingo-section-title">💬 Expression Bank</div>
+        <div class="bingo-expressions">
+          <div class="bingo-expr"><span>I like to</span> travel!</div>
+          <div class="bingo-expr"><span>I love to</span> cook!</div>
+          <div class="bingo-expr"><span>I enjoy</span> reading!</div>
+          <div class="bingo-expr"><span>I'm into</span> music!</div>
+          <div class="bingo-expr"><span>I'm a</span> sports <span>lover!</span></div>
+          <div class="bingo-expr"><span>I'm crazy about</span> dancing!</div>
+          <div class="bingo-expr"><span>I'm good at</span> cooking!</div>
+          <div class="bingo-expr"><span>I don't like</span> waking up early!</div>
+          <div class="bingo-expr"><span>I'm not into</span> horror movies!</div>
+          <div class="bingo-expr"><span>I hate</span> traffic!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: SLANG PRESENTATION -->
+<div class="slide" id="slide-2">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#0057FF; color:white;">SLANGS</span>
+    <span class="sh-title">Reaction Slangs — Presentation</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-2"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="slangs-grid">
+      <div class="slang-card" style="background:rgba(0,87,255,0.3); border:2px solid rgba(0,87,255,0.5);">
+        <div class="slang-num">1</div>
+        <div class="slang-phrase">Really?</div>
+        <div class="slang-use">Use when something surprises you or you want to confirm</div>
+      </div>
+      <div class="slang-card" style="background:rgba(0,200,83,0.3); border:2px solid rgba(0,200,83,0.5);">
+        <div class="slang-num">2</div>
+        <div class="slang-phrase">That's cool!</div>
+        <div class="slang-use">Use when something impresses you or sounds interesting</div>
+      </div>
+      <div class="slang-card" style="background:rgba(255,59,48,0.3); border:2px solid rgba(255,59,48,0.5);">
+        <div class="slang-num">3</div>
+        <div class="slang-phrase">No way!</div>
+        <div class="slang-use">Use when something is hard to believe or very surprising</div>
+      </div>
+      <div class="slang-card" style="background:rgba(241,196,5,0.25); border:2px solid rgba(241,196,5,0.5);">
+        <div class="slang-num">4</div>
+        <div class="slang-phrase">Me too!</div>
+        <div class="slang-use">Use when you share the same feeling or experience</div>
+      </div>
+      <div class="slang-card" style="background:rgba(233,30,140,0.3); border:2px solid rgba(233,30,140,0.5);">
+        <div class="slang-num">5</div>
+        <div class="slang-phrase">Awesome!</div>
+        <div class="slang-use">Use when something is great, exciting or impressive</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: SLANG PRACTICE — REACTION GAME -->
+<div class="slide" id="slide-3">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#F1C405; color:#05046A;">SLANG PRACTICE</span>
+    <span class="sh-title">The Reaction Game</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-3"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="reaction-layout">
+      <div class="reaction-instruction">
+        <strong>Student A</strong> reads the sentence out loud. <strong>Student B</strong> reacts immediately using one of the 5 slangs. Tap a sentence to reveal a suggested slang!
+      </div>
+      <div class="reaction-slangs-bar">
+        <span class="reaction-slang-chip">Really?</span>
+        <span class="reaction-slang-chip">That's cool!</span>
+        <span class="reaction-slang-chip">No way!</span>
+        <span class="reaction-slang-chip">Me too!</span>
+        <span class="reaction-slang-chip">Awesome!</span>
+      </div>
+      <div class="reaction-sentences" id="reactionSentences"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: PRE-LISTENING -->
+<div class="slide" id="slide-4">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#00C853; color:white;">PRE-LISTENING</span>
+    <span class="sh-title">ID Cards Setup</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-4"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="prelistening-layout">
+      <div class="prelistening-left">
+        <div class="prelistening-instruction">
+          Draw <strong>4 blank ID Cards</strong> in your notebook. You will listen to <strong>4 audio dialogues</strong> and fill in the information for each person.
+        </div>
+        <div class="idcard-blank">
+          <div class="idcard-blank-title">📋 ID Card Template</div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Name</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Age</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">City</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Occupation</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Likes / Dislikes</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Greeting used</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Farewell used</div>
+            <div class="idcard-field-line"></div>
+          </div>
+          <div class="idcard-field">
+            <div class="idcard-field-label">Slangs used</div>
+            <div class="idcard-field-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="prelistening-right">
+        <div class="listen-tip">
+          🎧 <strong>Listen carefully for:</strong><br><br>
+          ✅ Name — and how it is spelled<br>
+          ✅ Age and City<br>
+          ✅ Occupation<br>
+          ✅ Likes / Dislikes<br>
+          ✅ Greeting used<br>
+          ✅ Farewell used<br>
+          ✅ Slangs used
+        </div>
+        <div class="listen-tip" style="background:rgba(241,196,5,0.08); border-color:rgba(241,196,5,0.3); color:var(--yellow);">
+          ⚡ <strong>Each dialogue plays 2 times.</strong><br>
+          First listen: get the big picture.<br>
+          Second listen: fill in the details.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: LISTENING -->
+<div class="slide" id="slide-5">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#FF6B35; color:white;">LISTENING</span>
+    <span class="sh-title">The Secret ID Cards</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-5"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="listening-layout">
+      <div class="listening-instruction">
+        Listen to each dialogue <strong>2 times</strong>. Fill in the ID Card for each person in your notebook.
+      </div>
+      <div class="listening-cards">
+        <div class="listening-card">
+          <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/iksNeMcgEqqefGBy.jpg');">
+            <div class="listening-card-num">1</div>
+          </div>
+          <div class="listening-card-audio">
+            <div class="listening-card-label">Dialogue 1</div>
+            <div class="audio-placeholder" id="audio-placeholder-1">🎵 Audio pending</div>
+          </div>
+        </div>
+        <div class="listening-card">
+          <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/CCMjylTIZvfrLTWi.jpg');">
+            <div class="listening-card-num">2</div>
+          </div>
+          <div class="listening-card-audio">
+            <div class="listening-card-label">Dialogue 2</div>
+            <div class="audio-placeholder" id="audio-placeholder-2">🎵 Audio pending</div>
+          </div>
+        </div>
+        <div class="listening-card">
+          <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/YWAughRQYJpXutup.jpg');">
+            <div class="listening-card-num">3</div>
+          </div>
+          <div class="listening-card-audio">
+            <div class="listening-card-label">Dialogue 3</div>
+            <div class="audio-placeholder" id="audio-placeholder-3">🎵 Audio pending</div>
+          </div>
+        </div>
+        <div class="listening-card">
+          <div class="listening-card-photo" style="background-image:url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/IRnuGaliZgBenOLM.jpg');">
+            <div class="listening-card-num">4</div>
+          </div>
+          <div class="listening-card-audio">
+            <div class="listening-card-label">Dialogue 4</div>
+            <div class="audio-placeholder" id="audio-placeholder-4">🎵 Audio pending</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: ANSWER REVEAL -->
+<div class="slide" id="slide-6">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#00BCD4; color:white;">ANSWER REVEAL</span>
+    <span class="sh-title">Check Your ID Cards</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-6"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="reveal-layout">
+      <div class="reveal-cards" id="revealCards"></div>
+      <button class="reveal-all-btn" onclick="revealAll()">👁 Reveal All Answers</button>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: EXIT TICKET -->
+<div class="slide" id="slide-7">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#E91E8C; color:white;">EXIT TICKET</span>
+    <span class="sh-title">The Final Spell</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Page —</span>
+      <span class="sh-counter" id="counter-7"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="exit-layout">
+      <div class="exit-left">
+        <div class="exit-step-box">
+          <div class="exit-step-title">🚪 How to Leave the Class</div>
+          <div class="exit-step">
+            <div class="exit-step-num">1</div>
+            <div>The teacher says goodbye using a <strong style="color:var(--yellow);">slang</strong></div>
+          </div>
+          <div class="exit-step">
+            <div class="exit-step-num">2</div>
+            <div>You reply with a <strong style="color:var(--yellow);">different slang</strong></div>
+          </div>
+          <div class="exit-step">
+            <div class="exit-step-num">3</div>
+            <div>Say <strong style="color:var(--yellow);">one thing you love to do</strong></div>
+          </div>
+          <div class="exit-step">
+            <div class="exit-step-num">4</div>
+            <div><strong style="color:var(--yellow);">Spell your name</strong> in English before leaving</div>
+          </div>
+        </div>
+        <div class="exit-slangs-box">
+          <div class="exit-slangs-title">💬 Slangs to use</div>
+          <div class="exit-slangs-chips">
+            <span class="exit-slang-chip">Really?</span>
+            <span class="exit-slang-chip">That's cool!</span>
+            <span class="exit-slang-chip">No way!</span>
+            <span class="exit-slang-chip">Me too!</span>
+            <span class="exit-slang-chip">Awesome!</span>
+          </div>
+        </div>
+      </div>
+      <div class="exit-right">
+        <div class="exit-example-box">
+          <div class="exit-example-title">👩‍🏫 Teacher's Example</div>
+          <div class="exit-example-line">Teacher: <span>"Awesome! See you next class!"</span></div>
+          <div class="exit-example-line">Student: <span>"No way, already?!"</span></div>
+          <div class="exit-example-line">Student: <span>"I love to cook!"</span></div>
+          <div class="exit-example-line">Student: <span>"My name is S-O-F-I-A. Bye!"</span></div>
+        </div>
+        <div class="exit-example-box" style="background:rgba(233,30,140,0.1); border-color:rgba(233,30,140,0.3);">
+          <div class="exit-example-title" style="color:#FF6B9D;">🔤 Spelling Alphabet Reminder</div>
+          <div class="exit-example-line" style="font-size:15px; color:rgba(255,255,255,0.85);">
+            A-B-C-D-E-F-G-H-I-J-K-L-M<br>
+            N-O-P-Q-R-S-T-U-V-W-X-Y-Z
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: HOMEWORK -->
+<div class="slide" id="slide-8">
+  <div class="section-header">
+    <span class="sh-badge" style="background:#4A148C; color:white;">HOMEWORK</span>
+    <span class="sh-title">For Next Class</span>
+    <div class="sh-right">
+      <span class="sh-book">Book Pages 11–14</span>
+      <span class="sh-counter" id="counter-8"></span>
+    </div>
+  </div>
+  <div class="slide-content">
+    <div class="hw-layout">
+      <div class="hw-cards">
+        <div class="hw-card" style="background:rgba(0,87,255,0.25); border:2px solid rgba(0,87,255,0.4);">
+          <div class="hw-card-label">Grammar</div>
+          <div class="hw-card-pages">pp. 11 & 12</div>
+          <div class="hw-card-desc">Verb To Be — Affirmative, Negative & Questions. Complete all exercises.</div>
+        </div>
+        <div class="hw-card" style="background:rgba(0,200,83,0.25); border:2px solid rgba(0,200,83,0.4);">
+          <div class="hw-card-label">Vocabulary</div>
+          <div class="hw-card-pages">pp. 13 & 14</div>
+          <div class="hw-card-desc">Greetings, Occupations, Cities & A/AN. Complete all exercises.</div>
+        </div>
+      </div>
+      <div class="hw-reminder">
+        Complete <strong>all exercises</strong> on pages 11, 12, 13 and 14 to consolidate the week's grammar and vocabulary. 📚
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end slides-wrap -->
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+let currentSlide = 0;
+
+const navLabels = ['Cover','Warm-up','Slangs','Reaction','Pre-Listen','Listening','Reveal','Exit Ticket','Homework'];
+
+function buildNav() {
+  const pills = document.getElementById('navPills');
+  navLabels.forEach((label, i) => {
+    if (i === 0) return;
+    const pill = document.createElement('button');
+    pill.className = 'nav-pill' + (i === currentSlide ? ' active' : '');
+    pill.textContent = label;
+    pill.onclick = () => goToSlide(i);
+    pills.appendChild(pill);
+  });
+}
+
+function updateNav() {
+  document.querySelectorAll('.nav-pill').forEach((p, i) => {
+    p.classList.toggle('active', i + 1 === currentSlide);
+  });
+  document.getElementById('navCounter').textContent = currentSlide + ' / ' + (totalSlides - 1);
+  for (let i = 1; i < totalSlides; i++) {
+    const el = document.getElementById('counter-' + i);
+    if (el) el.textContent = i + ' / ' + (totalSlides - 1);
+  }
+  const nav = document.getElementById('mainNav');
+  nav.style.display = currentSlide === 0 ? 'none' : 'flex';
+  const wrap = document.getElementById('slidesWrap');
+  wrap.style.paddingTop = currentSlide === 0 ? '0' : '50px';
+}
+
+function goToSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = Math.max(0, Math.min(n, totalSlides - 1));
+  slides[currentSlide].classList.add('active');
+  updateNav();
+  if (currentSlide === 1) initBingo();
+  if (currentSlide === 3) initReaction();
+  if (currentSlide === 6) initReveal();
+}
+
+function changeSlide(dir) { goToSlide(currentSlide + dir); }
+
+// ===== BINGO =====
+const bingoActivities = [
+  'Cooking','Traveling','Sports','Music','Dancing','Reading',
+  'Yoga','Gardening','Painting','Swimming','Hiking','Movies',
+  'Photography','Gaming','Cycling','Singing','Crafts','Meditation'
+];
+let bingoMarked = new Set();
+
+function initBingo() {
+  const card = document.getElementById('bingoCard');
+  if (card.innerHTML !== '') return;
+  bingoActivities.forEach((act, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'bingo-cell';
+    cell.textContent = act;
+    cell.onclick = () => {
+      cell.classList.toggle('marked');
+      if (cell.classList.contains('marked')) bingoMarked.add(i);
+      else bingoMarked.delete(i);
+    };
+    card.appendChild(cell);
+  });
+}
+
+function resetBingo() {
+  bingoMarked.clear();
+  document.querySelectorAll('.bingo-cell').forEach(c => c.classList.remove('marked'));
+}
+
+// ===== REACTION GAME =====
+const reactionData = [
+  { text: 'I have 10 cats at home.', slang: 'No way!' },
+  { text: 'I speak 4 languages.', slang: 'That\'s cool!' },
+  { text: 'I wake up at 4 AM every day.', slang: 'Really?' },
+  { text: 'I love to eat spicy food for breakfast.', slang: 'No way!' },
+  { text: 'I traveled to 30 countries last year.', slang: 'Awesome!' },
+  { text: 'I don\'t like chocolate at all.', slang: 'Really?' },
+  { text: 'I can run a marathon in 3 hours.', slang: 'That\'s cool!' },
+  { text: 'I\'m crazy about horror movies!', slang: 'Me too!' },
+  { text: 'I work from midnight to 8 AM.', slang: 'No way!' },
+  { text: 'I\'m into collecting vintage stamps.', slang: 'Really?' }
+];
+
+function initReaction() {
+  const container = document.getElementById('reactionSentences');
+  if (container.innerHTML !== '') return;
+  reactionData.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'reaction-sentence';
+    div.innerHTML = `
+      <div class="reaction-num">${i + 1}</div>
+      <div class="reaction-text">${item.text}</div>
+      <div class="reaction-answer">💬 ${item.slang}</div>
+    `;
+    div.onclick = () => div.classList.toggle('revealed');
+    container.appendChild(div);
+  });
+}
+
+// ===== ANSWER REVEAL =====
+const revealData = [
+  {
+    photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/iksNeMcgEqqefGBy.jpg',
+    name: 'Pending audio', age: '—', city: '—', occupation: '—',
+    likes: '—', greeting: '—', farewell: '—', slangs: '—'
+  },
+  {
+    photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/CCMjylTIZvfrLTWi.jpg',
+    name: 'Pending audio', age: '—', city: '—', occupation: '—',
+    likes: '—', greeting: '—', farewell: '—', slangs: '—'
+  },
+  {
+    photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/YWAughRQYJpXutup.jpg',
+    name: 'Pending audio', age: '—', city: '—', occupation: '—',
+    likes: '—', greeting: '—', farewell: '—', slangs: '—'
+  },
+  {
+    photo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663634713668/IRnuGaliZgBenOLM.jpg',
+    name: 'Pending audio', age: '—', city: '—', occupation: '—',
+    likes: '—', greeting: '—', farewell: '—', slangs: '—'
+  }
+];
+
+const revealFields = ['name','age','city','occupation','likes','greeting','farewell','slangs'];
+const revealLabels = ['Name','Age','City','Occupation','Likes / Dislikes','Greeting','Farewell','Slangs'];
+
+function initReveal() {
+  const container = document.getElementById('revealCards');
+  if (container.innerHTML !== '') return;
+  revealData.forEach((person, pi) => {
+    const card = document.createElement('div');
+    card.className = 'reveal-card';
+    card.innerHTML = `
+      <div class="reveal-card-photo" style="background-image:url('${person.photo}')">
+        <div class="reveal-card-num">${pi + 1}</div>
+      </div>
+      <div class="reveal-card-body">
+        ${revealFields.map((f, fi) => `
+          <div class="reveal-field">
+            <div class="reveal-field-label">${revealLabels[fi]}</div>
+            <div class="reveal-field-value hidden" data-value="${person[f]}" onclick="this.classList.remove('hidden'); this.textContent=this.dataset.value;">${person[f]}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function revealAll() {
+  document.querySelectorAll('.reveal-field-value.hidden').forEach(el => {
+    el.classList.remove('hidden');
+    el.textContent = el.dataset.value;
+  });
+}
+
+// ===== INIT =====
+buildNav();
+updateNav();
+</script>
+</body>
+</html>
